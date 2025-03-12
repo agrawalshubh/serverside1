@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenleaf Organics - Signup and Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css' />
+    <style>
+        body {
+            font-family: 'Droid Serif', serif;
+            background-color: #f2f2f2;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding-top: 60px; /* Adjust for fixed navigation if needed */
+        }
+
+        /* --- Typography and General Styles (Matching your site) --- */
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #333; /* Or your primary text color */
+        }
+        h2.section-heading {
+            font-size: 40px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        h3.section-subheading {
+            font-style: italic;
+            font-family: 'Droid Serif', serif;
+            font-size: 16px;
+            margin-bottom: 40px;
+            color: #777; /* Or your secondary text color */
+        }
+        a {
+            color: #5cb85c; /* Green from your site's buttons */
+            text-decoration: none;
+        }
+        a:hover {
+            color: #4cae4c;
+        }
+
+        /* --- Form Specific Styles --- */
+        .form-container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        .form-group input[type="email"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        button[type="submit"] {
+            background-color: #fed136; /* Yellow from your theme */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #fec503; /* Darker yellow on hover */
+        }
+        .error-message {
+            color: #d9534f; /* Bootstrap danger color */
+            margin-top: 10px;
+        }
+
+        /* --- Navigation (Basic - adapt to your actual nav) --- */
+        nav {
+            background-color: #fff; /* Or your navigation background color */
+            padding: 10px 20px;
+            position: fixed; /* Fixed top navigation */
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure nav is on top */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center; /* Example - adjust as needed */
+        }
+        nav li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav a {
+            display: inline-block;
+            padding: 10px 15px;
+            color: #333; /* Or your nav link color */
+        }
+        nav a:hover {
+            color: #fed136; /* Yellow on hover for nav links */
+        }
+
+        /* --- Container for site content (adjust as needed) --- */
+        .container {
+            width: 80%; /* Example width */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px; /* Add padding if forms are within main content */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="#signup-form-section">Signup</a></li>
+            <li><a href="#login-form-section">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <div class="intro-text">
+                <div class="intro-lead-in">Welcome To Greenleaf Organics!</div>
+                <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
+                <a href="#services" class="btn btn-xl text-uppercase js-scroll-trigger" style="background-color: #fed136; color: white; border-color: #fed136; padding: 15px 30px; display: inline-block; margin-top: 20px; border-radius: 8px; font-family: 'Montserrat', sans-serif; font-weight: 700; text-decoration: none;">Tell Me More</a>
+            </div>
+        </header>
+
+        <section id="signup-form-section" class="form-container">
+            <h2 class="section-heading">Signup</h2>
+            <h3 class="section-subheading">Create a new Greenleaf Organics account</h3>
+            <form action="/signup" method="post" id="signupForm">
+                <div class="form-group">
+                    <label for="signupEmail">Email:</label>
+                    <input type="email" id="signupEmail" name="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password:</label>
+                    <input type="password" id="signupPassword" name="signupPassword" required>
+                </div>
+                <button type="submit">Signup</button>
+                <div id="signup-error" class="error-message"></div>
+            </form>
+        </section>
+
+        <section id="login-form-section" class="form-container">
+            <h2 class="section-heading">Login</h2>
+            <h3 class="section-subheading">Login to your Greenleaf Organics account</h3>
+            <form action="/login" method="post" id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" name="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" name="loginPassword" required>
+                </div>
+                <button type="submit">Login</button>
+                <div id="login-error" class="error-message"></div>
+            </form>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading text-uppercase">Services</h2>
+                        <h3 class="section-subheading text-muted">What we offer at Greenleaf Organics</h3>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="service-heading">Fresh Produce Delivery</h4>
+                        <p class="text-muted">We deliver fresh, organic produce directly from our farm to your doorstep. Enjoy the best of the season without leaving your home.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="service-heading">Online Ordering</h4>
+                        <p class="text-muted">Our easy-to-use online platform allows you to place your orders quickly and efficiently. Browse our catalog, select your items, and schedule your delivery with ease.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="service-heading">Secure Transactions</h4>
+                        <p class="text-muted">We ensure all transactions are secure and your personal information is protected. Shop with confidence knowing your data is safe with us.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <span class="copyright">Copyright &copy; Greenleaf Organics 2024</span>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-inline quicklinks">
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Placeholder JavaScript for form submission simulation (as before)
+        const signupForm = document.getElementById('signupForm');
+        const loginForm = document.getElementById('loginForm');
+        const signupErrorDiv = document.getElementById('signup-error');
+        const loginErrorDiv = document.getElementById('login-error');
+
+        signupForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = signupForm.signupEmail.value;
+            const password = signupForm.signupPassword.value;
+
+            if (!email || !password) {
+                signupErrorDiv.textContent = "Please fill in all fields.";
+            } else {
+                signupErrorDiv.textContent = "Signup form submitted (simulated for static site).";
+                alert("Signup form submitted (simulated).\n\nIn a real application, this would send data to a /signup endpoint.");
+                signupForm.reset();
+            }
+        });
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = loginForm.loginEmail.value;
+            const password = loginForm.loginPassword.value;
+
+            if (!email || !password) {
+                loginErrorDiv.textContent = "Please fill in all fields.";
+            } else {
+                loginErrorDiv.textContent = "Login form submitted (simulated for static site).";
+                alert("Login form submitted (simulated).\n\nIn a real application, this would send data to a /login endpoint.");
+                loginForm.reset();
+            }
+        });
+    </script>
+
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js"></script> </body>
+</html>
